@@ -47,3 +47,22 @@ int main()
     std::cout << countPrimeSetBits(left, right);
     return 0;
 }
+
+/*
+ * Better solution.
+ * As we know the max size of number is max of INT.
+ * i.e. 32 bits. So prime number should be less than 32
+ * i.e. valid prime numbers are only
+ * 2,3,5,7,11,13,17,19,23,27,31
+ */
+/*
+int countPrimeSetBits(int left, int right) {
+        int res = 0;
+        for(left; left <= right; left++) {
+            int num = __builtin_popcount(left);
+            if((num == 2) || (num == 3) || (num==5) || (num == 7) || (num == 11) || (num == 13)
+            || (num == 17) || (num == 19) || (num == 23) ||(num==29) || (num == 31)) res++;
+        }
+        return res;
+}
+*/
